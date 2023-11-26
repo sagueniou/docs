@@ -1,0 +1,62 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "person",
+    "contact" : { },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8040"
+  } ],
+  "paths" : {
+    "/services/customers/1" : {
+      "get" : {
+        "summary" : "person",
+        "description" : "person",
+        "operationId" : "person",
+        "parameters" : [ {
+          "name" : "accept",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "content-type",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "person",
+            "headers" : {
+              "Date" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : "Fri, 24 Nov 2023 21:47:13 GMT"
+              },
+              "Transfer-Encoding" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : "chunked"
+              }
+            },
+            "content" : {
+              "application/xml" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "example" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<customer>\n    <id>1</id>\n    <firstName>Mike</firstName>\n    <city>New-York</city>\n    <lastName>Jonson</lastName>\n</customer>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
